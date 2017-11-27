@@ -11,7 +11,9 @@ Product.add({
 	name: { type: Types.Text, initial: true, required: true },
 	description: { type: Types.Textarea, initial: true, required: true },
   status: { type: Types.Number },
-  location: { type: Types.Location, defaults: { country: 'Argentina' } },
+  condition: { type: Types.Select, options: 'good, broken', emptyOption: false },
+  address: { type: Types.GeoPoint },
+  mainImage: { type: Types.CloudinaryImage },
   images: { type: Types.CloudinaryImages },
   owner: { type: Types.Relationship, ref: 'User' }  
 });
